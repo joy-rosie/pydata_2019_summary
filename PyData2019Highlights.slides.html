@@ -13273,7 +13273,22 @@ a.anchor-link {
 <li><code>pandas.testing.assert...</code></li>
 <li><code>pytest.mark.parametrize()</code></li>
 <li><a href="https://github.com/google/pytruth" target="blank">Pytruth</a></li>
-<li>Coverage</li>
+<li>Coverage:<ul>
+<li><code>pip install pytest-cov</code></li>
+<li><code>pytest --cov=myproj tests/</code> will produce the following:</li>
+</ul>
+</li>
+</ul>
+
+<pre><code>-------------------- coverage: ... ---------------------
+Name                 Stmts   Miss  Cover
+----------------------------------------
+myproj/__init__          2      0   100%
+myproj/myproj          257     13    94%
+myproj/feature4286      94      7    92%
+----------------------------------------
+TOTAL                  353     20    94%</code></pre>
+<ul>
 <li>Given/When/Then</li>
 </ul>
 
@@ -13292,13 +13307,13 @@ a.anchor-link {
 </div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[2]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Hypothesis strategies allow you to create different examples to test your code one. </span>
 <span class="kn">from</span> <span class="nn">hypothesis.strategies</span> <span class="k">import</span> <span class="n">text</span><span class="p">,</span> <span class="n">lists</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">lists</span><span class="p">(</span><span class="n">test</span><span class="p">())</span><span class="o">.</span><span class="n">example</span><span class="p">())</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">lists</span><span class="p">(</span><span class="n">text</span><span class="p">())</span><span class="o">.</span><span class="n">example</span><span class="p">())</span>
 </pre></div>
 
     </div>
@@ -13314,17 +13329,18 @@ a.anchor-link {
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">ModuleNotFoundError</span>                       Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-2-1ce0fba548c5&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-intense-fg ansi-bold">      1</span> <span class="ansi-red-fg">### Hypothesis strategies allow you to create different examples to test your code one.</span>
-<span class="ansi-green-fg">----&gt; 2</span><span class="ansi-red-fg"> </span><span class="ansi-green-fg">from</span> hypothesis<span class="ansi-blue-fg">.</span>strategies <span class="ansi-green-fg">import</span> text<span class="ansi-blue-fg">,</span> lists
-<span class="ansi-green-intense-fg ansi-bold">      3</span> <span class="ansi-green-fg">for</span> i <span class="ansi-green-fg">in</span> range<span class="ansi-blue-fg">(</span><span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">,</span><span class="ansi-cyan-fg">10</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span>     print<span class="ansi-blue-fg">(</span>lists<span class="ansi-blue-fg">(</span>test<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>example<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">ModuleNotFoundError</span>: No module named &#39;hypothesis&#39;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[&#39;$&#39;, &#39;\U000933d2\x06\U000da7bf\uf3a0(\x13\r\U000b1a38\x16&#34;\U0007de83&#39;, &#39;\x0e\U000b197c&#39;, &#34;+\U00108f53&#39;\x03&#34;]
+[&#34;\U00087abd\U0004cc41&#39;\x03&#34;]
+[&#39;\x1c&#39;, &#39;\x04&#39;, &#39;\U000976ab&#39;]
+[]
+[]
+[&#39;\x15\x17&#39;, &#39;𬪐\U000ddbc2&#39;, &#39;\U00077f69\U0007e7d3\U000d34c1퀪\x02\x1b&#39;, &#39;/\U000d23fc/\x05%\U000119cb籛𪂥&#39;]
+[&#39;#\U000a74e0&#39;, &#39;\U0010f10f,&#39;, &#39;\U000fe9360&#39;, &#39;\U0005c636&#34;ⴧ\x1f\x05𥵒\U000a5937\x0e&#39;, &#39;\U00058c87𠭥\x10\x08&#39;, &#39;\U0005a0b1&#39;]
+[]
+[&#39;&#39;, &#39;\x02-\U00106371\x02\U000fa6a3&#39;]
+[]
+</pre>
 </div>
 </div>
 
@@ -13443,7 +13459,7 @@ Would print <code>x*9 + 15=42</code></li>
 
 </div>
 </div>
-</div></section></section><section><section>
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -13495,10 +13511,10 @@ Would print <code>x*9 + 15=42</code></li>
 
  
  
-<div id="0fcd3b70-c7d3-4b3c-87ee-499a68fe3540"></div>
+<div id="2eada060-8b06-41b5-a06a-0b568ffef07b"></div>
 <div class="output_subarea output_widget_view ">
 <script type="text/javascript">
-var element = $('#0fcd3b70-c7d3-4b3c-87ee-499a68fe3540');
+var element = $('#2eada060-8b06-41b5-a06a-0b568ffef07b');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "96bbf0a55c99472099708b2044c244ac", "version_major": 2, "version_minor": 0}
@@ -13655,10 +13671,10 @@ dog          6.0        34.0          102.75
 
 
 
-<div id="09b5cc1a-7082-4493-8dbe-d7fd20453075"></div>
+<div id="88bf45d5-fe65-4909-ab3c-c95bee00680c"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#09b5cc1a-7082-4493-8dbe-d7fd20453075');
+var element = $('#88bf45d5-fe65-4909-ab3c-c95bee00680c');
 
 (function(root) {
   function now() {
@@ -14335,10 +14351,10 @@ div.hologroup {
 
 
 
-<div id="68a0eab0-3222-4c3c-91be-871a78f59924"></div>
+<div id="a4f42bf6-e1a5-4f5d-9251-d9f51f6e9127"></div>
 <div class="output_subarea output_javascript ">
 <script type="text/javascript">
-var element = $('#68a0eab0-3222-4c3c-91be-871a78f59924');
+var element = $('#a4f42bf6-e1a5-4f5d-9251-d9f51f6e9127');
 function HoloViewsWidget() {
 }
 
@@ -15316,6 +15332,14 @@ if (window.Jupyter !== undefined) {
 <h4 id="Causal-Inference">Causal Inference<a class="anchor-link" href="#Causal-Inference">&#182;</a></h4><ul>
 <li>The book of Why By Judea Perl</li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="And-Finally....">And Finally....<a class="anchor-link" href="#And-Finally....">&#182;</a></h3><p><a href="https://vimeo.com/150423718#t=4m45s" target="blank">Alphabetical order</a></p>
 
 </div>
 </div>
