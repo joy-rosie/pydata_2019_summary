@@ -11,7 +11,7 @@ holoviews==1.12.3
 hvplot==0.4.0.post13+gad41b24
 hypothesis==4.28.2
 ipykernel==5.1.1
-ipython==7.6.1
+ipython==7.16.3
 ipython-genutils==0.2.0
 ipywidgets==7.5.0
 jedi==0.14.1
